@@ -18,15 +18,9 @@
         justify-content: center;
         align-items: center;
 
-        height: 100vh;
-
-        width: 100vw;
+        min-height: 100vh;
 
         background: #000000;
-
-        transform: scale(0.85);
-
-        overflow: hidden;
       }
 
       .skull {
@@ -43,8 +37,8 @@
       .skull::after,
       .skull::before {
         content: "";
-        width: 49px;
-        height: 39px;
+        width: 50px;
+        height: 40px;
 
         border-radius: 50%;
 
@@ -54,11 +48,11 @@
       }
 
       .skull::after {
-        transform: translate(31px, 31px) rotate(40deg);
+        transform: translate(26px, 30px) rotate(31deg);
       }
 
       .skull::before {
-        transform: translate(21px, 31px) rotate(-40deg);
+        transform: translate(20px, 30px) rotate(-30deg);
       }
 
       [class^="teeth"] {
@@ -74,56 +68,18 @@
       }
 
       .teeth-1 {
-        transform: translate(-5px, 30px);
+        transform: translate(-6px, 30px);
       }
 
       .teeth-2 {
-        transform: translate(15px, 30px);
+        transform: translate(14px, 30px);
       }
 
       .teeth-3 {
-        transform: translate(35px, 30px);
+        transform: translate(34px, 30px);
       }
 
-      [class^="bone"] {
-        width: 24px;
-        height: 24px;
-
-        display: inline-block;
-
-        background: #fff;
-        position: absolute;
-      }
-
-      .bone-1 {
-        left: 0;
-
-        transform: rotate(-40deg) translate(-5px, -19px);
-      }
-
-      .bone-2 {
-        right: 0;
-
-        transform: rotate(50deg) translate(4px, -20px);
-      }
-
-      .bone-3 {
-        right: 0;
-        bottom: 0;
-
-        transform: rotate(137deg) translate(-1px, -20px);
-      }
-
-      .bone-4 {
-        left: 0;
-        bottom: 0;
-
-        transform: rotate(-137deg) translate(7px, -20px);
-      }
-
-      [class^="bone"]::after,
-      [class^="bone"]::before {
-        content: "";
+      .bone-edges {
         width: 25px;
         height: 25px;
 
@@ -131,15 +87,51 @@
 
         display: inline-block;
 
-        background: #fff;
+        background: #ffffff;
+
+        transform: translate(18%, -90%);
+
+        -webkit-box-reflect: left -10px;
       }
 
-      [class^="bone"]::after {
-        transform: translate(5px, -35px);
+      .bone-1,
+      .bone-2,
+      .bone-3,
+      .bone-4 {
+        width: 20px;
+        height: 15px;
+
+        display: inline-block;
+
+        background: #ffffff;
+
+        position: absolute;
       }
 
-      [class^="bone"]::before {
-        transform: translate(-10px, -10px);
+      .bone-1 {
+        left: 0;
+
+        transform: rotate(-45deg) translateY(-60%) translateX(-25%);
+      }
+
+      .bone-2 {
+        right: 0;
+
+        transform: rotate(45deg) translateY(-60%) translateX(25%);
+      }
+
+      .bone-3 {
+        bottom: 0;
+        left: 0;
+
+        transform: rotate(-135deg) translateY(-60%) translateX(30%);
+      }
+
+      .bone-4 {
+        bottom: 0;
+        right: 0;
+
+        transform: rotate(-223deg) translateY(-60%) translateX(-30%);
       }
     </style>
   </head>
@@ -149,10 +141,21 @@
       <span class="teeth-2"></span>
       <span class="teeth-3"></span>
 
-      <span class="bone-1"></span>
-      <span class="bone-2"></span>
-      <span class="bone-3"></span>
-      <span class="bone-4"></span>
+      <span class="bone-1">
+        <span class="bone-edges"></span>
+      </span>
+
+      <span class="bone-2">
+        <span class="bone-edges"></span>
+      </span>
+
+      <span class="bone-3">
+        <span class="bone-edges"></span>
+      </span>
+
+      <span class="bone-4">
+        <span class="bone-edges"></span>
+      </span>
     </div>
   </body>
 </html>
